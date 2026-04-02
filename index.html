@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pranay Saha — Software Engineer</title>
+    <meta name="description"
+        content="Pranay Saha — Software Engineer building scalable ML systems, real-time computer vision, and GPU-accelerated AI infrastructure." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ────────────── WATERCOLOUR BACKGROUND ──────────────── -->
+    <!-- Hidden SVG filter for watercolour turbulence -->
+    <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+        <defs>
+            <filter id="watercolor" x="-30%" y="-30%" width="160%" height="160%" color-interpolation-filters="sRGB">
+                <feTurbulence type="fractalNoise" baseFrequency="0.008 0.012" numOctaves="4" seed="5"
+                    stitchTiles="stitch" result="noise" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="90" xChannelSelector="R" yChannelSelector="G"
+                    result="displaced" />
+                <feGaussianBlur in="displaced" stdDeviation="28" result="blur" />
+                <feComposite in="blur" operator="over" />
+            </filter>
+        </defs>
+    </svg>
+
+    <div class="wc-canvas" aria-hidden="true">
+        <div class="wc-blob wc-blob-1"></div>
+        <div class="wc-blob wc-blob-2"></div>
+        <div class="wc-blob wc-blob-3"></div>
+        <div class="wc-blob wc-blob-4"></div>
+        <div class="wc-blob wc-blob-5"></div>
+        <div class="wc-blend"></div>
+    </div>
+    <div class="wc-grain" aria-hidden="true"></div>
+
+    <!-- ────────────────── NAV ────────────────── -->
+    <nav class="navbar" id="navbar">
+        <ul class="nav-links">
+            <li><a href="#hero" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#blog" class="nav-link">Blog</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+            <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get
+                in touch</button>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul>
+            <li><a href="#hero" class="mob-link">Home</a></li>
+            <li><a href="#about" class="mob-link">About</a></li>
+            <li><a href="#experience" class="mob-link">Experience</a></li>
+            <li><a href="#blog" class="mob-link">Blog</a></li>
+            <li><a href="#contact" class="mob-link">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- ────────────────── HERO ────────────────── -->
+    <section class="hero" id="hero">
+        <!-- Gradient orbs -->
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+
+        <!-- Noise grain overlay -->
+        <div class="noise"></div>
+
+        <div class="hero-content">
+            <div class="hero-emoji-wrap" id="heroEmoji">
+                <img src="Data/Emoji2.jpeg" alt="Pranay Saha memoji" class="hero-emoji" />
+                <div class="emoji-glow"></div>
+            </div>
+
+            <div class="hero-text">
+                <p class="hero-greeting">Hey, I'm Pranay 👋</p>
+                <h1 class="hero-title">
+                    <span class="word">Computer</span>
+                    <span class="word accent">Vision</span>
+                    <span class="word">&</span>
+                    <span class="word">ML</span>
+                    <span class="word">Engineer</span>
+                </h1>
+                <p class="hero-sub">
+                    Building scalable AI inference systems &amp; city-scale surveillance platforms.<br />
+                    Currently at <span class="highlight">Masterworks</span>, Hyderabad.
+                </p>
+                <div class="hero-ctas">
+                    <button class="btn-primary"
+                        onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About me
+                        →</button>
+                    <button class="btn-ghost"
+                        onclick="document.getElementById('experience').scrollIntoView({behavior:'smooth'})">My
+                        Work</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll hint -->
+        <div class="scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ────────────────── ABOUT ────────────────── -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <div class="section-label">01 — About me</div>
+
+            <div class="about-grid">
+                <div class="about-left">
+                    <h2 class="section-title">Turning pixels<br />into intelligence</h2>
+                </div>
+
+                <div class="about-right">
+                    <p class="about-intro">
+                        I'm a Computer Vision &amp; Machine Learning Engineer with a deep focus on building
+                        production-grade AI systems that operate at scale. From managing 4,000+ camera feeds
+                        to reducing computational overhead, I engineer solutions that are both
+                        technically rigorous and practically impactful.
+                    </p>
+
+                    <div class="about-cards">
+                        <div class="info-card">
+                            <div class="info-card-icon">🎓</div>
+                            <div>
+                                <div class="info-card-title">Education</div>
+                                <div class="info-card-body">B.Tech CSE (AIML) — IEM Kolkata</div>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-card-icon">📧</div>
+                            <div>
+                                <div class="info-card-title">Email</div>
+                                <div class="info-card-body"><a
+                                        href="mailto:pranaysaha61@gmail.com">pranaysaha61@gmail.com</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-section">
+                        <h3 class="skills-title">Tech Stack</h3>
+                        <div class="skills-grid">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">TensorRT</span>
+                            <span class="skill-tag">ONNX</span>
+                            <span class="skill-tag">Triton Inference Server</span>
+                            <span class="skill-tag">OpenCV</span>
+                            <span class="skill-tag">LangGraph</span>
+                            <span class="skill-tag">Docker</span>
+                            <span class="skill-tag">Kubernetes</span>
+                            <span class="skill-tag">Kafka</span>
+                            <span class="skill-tag">FastAPI</span>
+                            <span class="skill-tag">Git</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ────────────────── EXPERIENCE ────────────────── -->
+    <section class="section experience-section" id="experience">
+        <div class="container">
+            <div class="section-label">02 — Experience</div>
+            <h2 class="section-title">Where I've<br />made an impact</h2>
+
+            <div class="timeline">
+
+                <!-- Masterworks -->
+                <div class="timeline-item" data-index="0">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="tl-company">Masterworks</div>
+                                <div class="tl-role">Computer Vision Engineer · SDE-1</div>
+                            </div>
+                            <div class="tl-meta">
+                                <span class="tl-period">Mar 2025 – Present</span>
+                                <span class="tl-location">Hyderabad, India</span>
+                            </div>
+                        </div>
+                        <ul class="tl-bullets">
+                            <li>Contributed to the flagship low-code platform powering city-scale surveillance across
+                                highways, parks, and streets with automated incident detection and real-time alerting.
+                            </li>
+                            <li>Architected multiple microservices enabling seamless one-click deployment of CV use
+                                cases across distributed edge devices.</li>
+                            <li>Managed high-throughput model inference using <strong>Triton Inference Server</strong>,
+                                supporting 24×7 concurrent camera streaming across large deployments.</li>
+                            <li>Built a dynamic multi-accelerator AI inference orchestration service converting models
+                                into optimised engines for <strong>NVIDIA</strong> and <strong>Qualcomm</strong>
+                                hardware.</li>
+                            <li>Designed inference architecture processing real-time video feeds from <strong>4,000+
+                                    cameras</strong> across heterogeneous edge devices.</li>
+                            <li>Optimised end-to-end inference pipeline, achieving <strong>~70% reduction</strong> in
+                                computational overhead.</li>
+                            <li>Built user-configurable CV Use Nodes (Detection, Annotation, Classification, Alerting)
+                                enabling rapid workflow customisation.</li>
+                            <li>Engineered data pipelines and trained CV models for city surveillance tasks including
+                                entry/exit monitoring and access alerting.</li>
+                        </ul>
+                        <div class="tl-tags">
+                            <span>Triton</span><span>TensorRT</span><span>ONNX</span><span>Docker</span><span>Kubernetes</span><span>Kafka</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Yukin -->
+                <div class="timeline-item" data-index="1">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="tl-company">Yukin</div>
+                                <div class="tl-role">Machine Learning Engineer</div>
+                            </div>
+                            <div class="tl-meta">
+                                <span class="tl-period">Feb 2024 – Dec 2024</span>
+                                <span class="tl-location">Remote</span>
+                            </div>
+                        </div>
+                        <ul class="tl-bullets">
+                            <li>Collaborated with the founding team developing models for personalised Digital Avatars
+                                with realistic expressions and lip-synchronisation.</li>
+                            <li>Evaluated 20+ open-source models for Text2Speech, Voice Cloning, and Speech Synthesis in
+                                a multilingual setup; optimised to reduce <strong>RAM consumption by 50%</strong>.</li>
+                            <li>Designed and developed a RESTful API using <strong>FastAPI</strong>, improving developer
+                                productivity by <strong>20%</strong>.</li>
+                        </ul>
+                        <div class="tl-tags">
+                            <span>FastAPI</span><span>TTS</span><span>Voice Cloning</span><span>Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proglint Solutions -->
+                <div class="timeline-item" data-index="2">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <div class="tl-company">Proglint Solutions</div>
+                                <div class="tl-role">Computer Vision Engineer</div>
+                            </div>
+                            <div class="tl-meta">
+                                <span class="tl-period">Contract / POC</span>
+                            </div>
+                        </div>
+                        <ul class="tl-bullets">
+                            <li>Constructed a Proof of Concept (POC) for real-time <strong>person
+                                    re-identification</strong> and multi-camera tracking, designed to enhance
+                                surveillance coverage in retail environments.</li>
+                            <li>Engineered a highly precise model boasting a <strong>98% precision rate</strong>,
+                                significantly slashing False Positives by <strong>30%</strong>.</li>
+                            <li>Streamlined algorithmic performance for enhanced speed and efficiency, reducing frame
+                                computation by <strong>50%</strong>, leveraging advanced techniques such as
+                                <strong>multi-threading</strong> for seamless parallel processing.
+                            </li>
+                        </ul>
+                        <div class="tl-tags">
+                            <span>Re-ID</span><span>Multi-Camera
+                                Tracking</span><span>OpenCV</span><span>Multi-threading</span><span>Python</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ────────────────── BLOG ────────────────── -->
+    <section class="section blog-section" id="blog">
+        <div class="container">
+            <div class="section-label">03 — Blog</div>
+            <h2 class="section-title">Things I write<br />about</h2>
+
+            <div class="blog-grid">
+                <a class="blog-card"
+                    href="https://medium.com/@pranaysaha/why-companies-end-up-using-triton-inference-server-a-simple-case-study-55c89c395f37"
+                    target="_blank" rel="noopener noreferrer">
+                    <div class="blog-card-top">
+                        <span class="blog-tag">Inference · MLOps</span>
+                        <span class="blog-read">5 min read</span>
+                    </div>
+                    <h3 class="blog-title">Why Companies End Up Using Triton Inference Server — A Simple Case Study</h3>
+                    <p class="blog-excerpt">
+                        A deep-dive into why Triton Inference Server has become the go-to choice for production
+                        ML inference — exploring real bottlenecks, benchmarks, and the engineering trade-offs
+                        companies face when scaling model serving.
+                    </p>
+                    <div class="blog-footer">
+                        <span class="blog-author">Pranay Saha</span>
+                        <span class="blog-arrow">→</span>
+                    </div>
+                </a>
+
+                <a class="blog-card"
+                    href="https://medium.com/@pranaysaha/dive-into-mlx-performance-flexibility-for-apple-silicon-651d79080c4c"
+                    target="_blank" rel="noopener noreferrer">
+                    <div class="blog-card-top">
+                        <span class="blog-tag">Apple Silicon · ML</span>
+                        <span class="blog-read">6 min read</span>
+                    </div>
+                    <h3 class="blog-title">Dive into MLX — Performance & Flexibility for Apple Silicon</h3>
+                    <p class="blog-excerpt">
+                        A hands-on exploration of Apple's MLX framework — how it unlocks near-native GPU performance
+                        on M-series chips, its unique unified-memory model, and where it fits in the ML ecosystem.
+                    </p>
+                    <div class="blog-footer">
+                        <span class="blog-author">Pranay Saha</span>
+                        <span class="blog-arrow">→</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="blog-more">
+                <a href="https://medium.com/@pranaysaha" target="_blank" rel="noopener noreferrer" class="btn-ghost">
+                    Read all on Medium →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ────────────────── CONTACT ────────────────── -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="section-label">04 — Contact</div>
+
+            <div class="contact-inner">
+                <h2 class="contact-title">Let's build<br />something <span class="accent">together</span></h2>
+                <p class="contact-sub">
+                    Whether it's an exciting AI opportunity, a collaboration, or just a chat about
+                    inference systems — my inbox is always open.
+                </p>
+
+                <a href="mailto:pranaysaha61@gmail.com" class="email-cta">
+                    pranaysaha61@gmail.com
+                </a>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/pranaysaha-/" target="_blank" rel="noopener noreferrer"
+                        class="social-link">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/pranay-009" target="_blank" rel="noopener noreferrer"
+                        class="social-link">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                        </svg>
+                        GitHub
+                    </a>
+                    <a href="mailto:pranaysaha61@gmail.com" class="social-link">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.272H1.636A1.636 1.636 0 010 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.908 1.528-1.147C21.69 2.28 24 3.434 24 5.457z" />
+                        </svg>
+                        Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ────────────────── FOOTER ────────────────── -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <p>© 2025 Pranay Saha. Crafted with ❤️</p>
+                <div class="footer-links">
+                    <a href="https://github.com/pranay-009" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/pranaysaha-/" target="_blank">LinkedIn</a>
+                    <a href="https://medium.com/@pranaysaha" target="_blank">Medium</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Form Modal (optional overlay) -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="contactModal">
+            <button class="modal-close" id="modalClose">✕</button>
+            <h3>Send me a message</h3>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="formName" placeholder="Your Name" required />
+                </div>
+                <div class="form-group">
+                    <input type="email" id="formEmail" placeholder="Your Email" required />
+                </div>
+                <div class="form-group">
+                    <textarea id="formMsg" placeholder="Your message..." rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary full-width">Send Message →</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
