@@ -1412,3 +1412,71 @@ footer,
         padding-left: 1.5rem;
     }
 }
+
+.skills-section {
+    margin-top: 80px;
+}
+
+.skills-title {
+    margin-bottom: 28px;
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+.skills-marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to right,
+            transparent,
+            white 8%,
+            white 92%,
+            transparent);
+    -webkit-mask-image: linear-gradient(to right,
+            transparent,
+            white 8%,
+            white 92%,
+            transparent);
+}
+
+.skills-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 30s linear infinite;
+}
+
+.skills-group {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding-right: 48px;
+}
+
+.skills-group img {
+
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+
+    transition: .3s;
+
+    opacity: .95;
+}
+
+.skills-group img:hover {
+
+    transform: translateY(-6px) scale(1.15);
+
+}
+
+@keyframes marquee {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
